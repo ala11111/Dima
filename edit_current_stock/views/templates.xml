@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id = "stock_report_inherit_id" inherit_id = "stock.report_inventory">
+		<xpath expr="//table[1]/thead/tr[1]/th[2]" position="after">
+			<th class="text-center">Product Image</th>
+		</xpath>
+
+		<xpath expr="//table[1]/tbody/t[1]/tr[2]/td[2]" position="after">
+			<td class="text-center"><img t-if="line.image_128" t-att-src="'data:image/png;base64,%s' % to_text(line.image_128)" style="width: 100%"/></td>
+		</xpath>
+	</template>
+    </data>
+</odoo>
