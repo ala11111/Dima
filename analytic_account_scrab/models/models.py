@@ -32,9 +32,17 @@ class StockMoveInherit(models.Model):
         self.ensure_one()
 
         rslt = super(StockMoveInherit, self)._generate_valuation_lines_data(partner_id, qty, debit_value, credit_value, debit_account_id, credit_account_id, description)
-        if self.analytic_account_id:
+        print('xxxxxxxxxxxxxx',debit_account_id)
+        print('xxxxxxxxxxxxxx',debit_account_id)
+        print('xxxxxxxxxxxxxx',debit_account_id)
+        print('xxxxxxxxxxxxxx',debit_account_id)
+        account_debit_account=self.env['account.account'].sudo().search([('id','=',debit_account_id)],limit=1)
+        print('sssssssssssss',account_debit_account.user_type_id)
+        if account_debit_account.user_type_id.id == self.env.ref('account.data_account_type_expenses').id:
+            print('fffffffffffffffffffffffffffffffffffffffffffffffff')
+            if self.analytic_account_id:
 
-            rslt['debit_line_vals']['analytic_account_id'] = self.analytic_account_id.id
+                rslt['debit_line_vals']['analytic_account_id'] = self.analytic_account_id.id
         return rslt
 
 
