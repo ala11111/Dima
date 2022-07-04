@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id = "stock_report_inherit_id" inherit_id = "stock.report_inventory">
-		<xpath expr="//table[1]/thead/tr[1]/th[2]" position="after">
-			<th class="text-center">Product Image</th>
-		</xpath>
+        <template id="stock_report_inherit_id" inherit_id="stock.report_inventory">
+            <xpath expr="//table[1]/thead/tr[1]/th[2]" position="after">
+                <th class="text-center">Product Image</th>
+            </xpath>
 
-		<xpath expr="//table[1]/tbody/t[1]/tr[2]/td[2]" position="after">
-			<td class="text-center"><img t-if="line.image_128" t-att-src="'data:image/png;base64,%s' % to_text(line.image_128)" style="width: 100%"/></td>
-		</xpath>
-	</template>
+            <xpath expr="//table[1]/tbody/t[1]/tr[2]/td[2]" position="after">
+                <td class="text-center">
+                    <img t-if="line.image_128" t-att-src="'data:image/png;base64,%s' % to_text(line.image_128)"
+                         style="width: 100%"/>
+                </td>
+            </xpath>
+        </template>
+
+        <template id="edit_external_layout_striped"
+                  inherit_id="web.external_layout_striped">
+<!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="replace">-->
+
+<!--			</xpath>-->
+            <xpath expr="//div[contains(@class,'float-left company_address')]" position="attributes">
+                <attribute name="class">d-none</attribute>
+            </xpath>
+            <xpath expr="//div[contains(@class,'clearfix mb8')]" position="after">
+            <div class="float-left company_address">
+                <span t-if="company.company_details" t-field="company.company_details"/>
+            </div>
+			</xpath>
+
+
+        </template>
     </data>
 </odoo>
