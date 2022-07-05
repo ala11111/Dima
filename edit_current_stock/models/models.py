@@ -7,7 +7,7 @@ class StockQuant(models.Model):
     _inherit = "stock.quant"
 
     image_128 = fields.Image(string="Image",store=False,related='product_id.image_1920')
-    value_sale = fields.Float(string="Value2",  required=False,compute='get_value_sale' )
+    value_sale = fields.Float(string="Value2",  required=False,compute='get_value_sale',store=True )
 
 
     @api.depends('available_quantity','product_id','product_id.list_price')
