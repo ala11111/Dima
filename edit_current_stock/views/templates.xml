@@ -16,17 +16,71 @@
 
         <template id="edit_external_layout_striped"
                   inherit_id="web.external_layout_striped">
-<!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="replace">-->
+            <!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="replace">-->
 
-<!--			</xpath>-->
+            <!--			</xpath>-->
             <xpath expr="//div[contains(@class,'float-left company_address')]" position="attributes">
                 <attribute name="class">d-none</attribute>
             </xpath>
             <xpath expr="//div[contains(@class,'clearfix mb8')]" position="after">
-            <div class="float-left company_address">
-                <span t-if="company.company_details" t-field="company.company_details"/>
-            </div>
-			</xpath>
+                <div class="float-left company_address">
+                    <span t-if="company.company_details" t-field="company.company_details"/>
+                </div>
+            </xpath>
+            <xpath expr="//div[contains(@t-attf-class,'o_company_#{company.id}_layout footer o_background_footer')]"
+                   position="replace">
+                <div t-attf-class="o_company_#{company.id}_layout footer o_background_footer">
+                    <div class="row">
+                        <!--                        <ul class="list-inline">-->
+                        <!--                            <div t-field="company.report_footer"/>-->
+                        <!--                        </ul>-->
+
+                        <table width="80%">
+                            <tr>
+                                <td>
+                                    <b>Phone :</b>
+                                    <b>
+                                        <span t-field="company.phone"/>
+                                    </b>
+                                </td>
+                                <td>
+                                    <b>
+                                        <span t-field="company.street"/>
+                                    </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                        <span t-field="company.email"/>
+                                    </b>
+                                </td>
+                                <td>
+                                    <b>
+                                        <span t-field="company.street2"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </table>
+                        <table width="20%">
+                            <tr width="100%">
+                                <img src="/edit_current_stock/static/img/qr.jpeg" style="height: 100px;width: 100px;" alt="qr"/>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class="text-center">
+                        <div t-if="report_type == 'pdf'" class="text-muted">
+                            Page:
+                            <span class="page"/>
+                            of
+                            <span class="topage"/>
+                        </div>
+                    </div>
+
+                </div>
+            </xpath>
 
 
         </template>
