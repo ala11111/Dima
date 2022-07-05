@@ -15,7 +15,7 @@
                 </xpath>
                 <xpath expr="//field[@name='value']" position="after">
                     <!-- Add your fields or attributes here -->
-                    <field name="value_sale"/>
+                    <field name="value_sale" optional="hide"/>
                 </xpath>
 
             </field>
@@ -33,7 +33,7 @@
                 </xpath>
                 <xpath expr="//field[@name='value']" position="after">
                     <!-- Add your fields or attributes here -->
-                    <field name="value_sale"/>
+                    <field name="value_sale" optional="hide"/>
                 </xpath>
             </field>
         </record>
