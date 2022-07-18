@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id = "stock_report_inherit_id" inherit_id = "stock.report_inventory">
-		<xpath expr="//table[1]/thead/tr[1]/th[2]" position="after">
-			<th class="text-center">Product Image</th>
-		</xpath>
+        <template id="stock_report_inherit_id" inherit_id="stock.report_inventory">
+            <xpath expr="//table[1]/thead/tr[1]/th[2]" position="after">
+                <th class="text-center">Product Image</th>
+            </xpath>
 
-		<xpath expr="//table[1]/tbody/t[1]/tr[2]/td[2]" position="after">
-			<td class="text-center"><img t-if="line.image_128" t-att-src="'data:image/png;base64,%s' % to_text(line.image_128)" style="width: 100%"/></td>
-		</xpath>
-	</template>
+            <xpath expr="//table[1]/tbody/t[1]/tr[2]/td[2]" position="after">
+                <td class="text-center">
+                    <img t-if="line.image_128" t-att-src="'data:image/png;base64,%s' % to_text(line.image_128)"
+                         style="width: 100%"/>
+                </td>
+            </xpath>
+        </template>
+
+        <template id="edit_external_layout_striped"
+                  inherit_id="web.external_layout_striped">
+            <!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="replace">-->
+
+            <!--			</xpath>-->
+            <xpath expr="//div[contains(@class,'float-left company_address')]" position="attributes">
+                <attribute name="class">d-none</attribute>
+            </xpath>
+            <xpath expr="//div[contains(@class,'clearfix mb8')]" position="after">
+                <div class="float-left company_address">
+                    <span t-if="company.company_details" t-field="company.company_details"/>
+                </div>
+            </xpath>
+            <xpath expr="//div[contains(@t-attf-class,'o_company_#{company.id}_layout footer o_background_footer')]"
+                   position="replace">
+                <div t-attf-class="o_company_#{company.id}_layout footer o_background_footer">
+                    <div class="row">
+                        <!--                        <ul class="list-inline">-->
+                        <!--                            <div t-field="company.report_footer"/>-->
+                        <!--                        </ul>-->
+
+                        <table width="80%">
+                            <tr>
+                                <td>
+                                    <b>Phone :</b>
+                                    <b>
+                                        <span t-field="company.phone"/>
+                                    </b>
+                                </td>
+                                <td>
+                                    <b>
+                                        <span t-field="company.street"/>
+                                    </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                        <span t-field="company.email"/>
+                                    </b>
+                                </td>
+                                <td>
+                                    <b>
+                                        <span t-field="company.street2"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </table>
+                        <table width="20%">
+                            <tr width="100%">
+                                <img src="/edit_current_stock/static/img/qr.jpeg" style="height: 100px;width: 100px;" alt="qr"/>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class="text-center">
+                        <div t-if="report_type == 'pdf'" class="text-muted">
+                            Page:
+                            <span class="page"/>
+                            of
+                            <span class="topage"/>
+                        </div>
+                    </div>
+
+                </div>
+            </xpath>
+
+
+        </template>
     </data>
 </odoo>

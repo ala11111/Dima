@@ -1,6 +1,7 @@
+
 # -*- coding: utf-8 -*-
 {
-    'name': "edit_current_stock",
+    'name': "analytic_account_scrab",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,7 +21,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','stock','stock_account'],
+    'depends': ['base','stock','account','mrp'],
 
     # always loaded
     'data': [
