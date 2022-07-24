@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<template id = "report_invoice_document_inherit_id" inherit_id = "account.report_invoice_document">
+		<xpath expr="//address" position="before">
+			<!-- Add your fields or attributes here -->
+<!--			<br/>-->
+<!--			<br/>-->
+<!--			<br/>-->
+<!--			<br/>-->
+<!--			<br/>-->
+			<br/>
+			<br/>
+		</xpath>
 		<xpath expr="//table[1]/thead/tr[1]/th[1]" position="after">
 			<th class="text-center">Product Image</th>
 		</xpath>
 
 		<xpath expr="//table[1]/tbody/t[3]/tr[1]/t[1]/td[1]" position="after">
-			<td class="text-center"><img t-if="line.image_128" t-att-src="'data:image/png;base64,%s' % to_text(line.image_128)" style="width: 90%"/></td>
+			<td class="text-center"><img t-if="line.image_128" t-att-src="'data:image/png;base64,%s' % to_text(line.image_128)" style="width: 50%"/></td>
 		</xpath>
 	</template>
 </odoo>
