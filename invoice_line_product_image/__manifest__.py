@@ -19,7 +19,7 @@
 	""",
 	'author': "BrowseInfo",
 	"website" : "https://www.browseinfo.in",
-    'depends': ['base', 'account'],
+    'depends': ['base', 'account','sale'],
 	'data': [
 			'report/sale_order_report.xml',
 			'views/view_sale_order.xml',
