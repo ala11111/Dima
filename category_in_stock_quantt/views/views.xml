@@ -1,5 +1,16 @@
 <odoo>
     <data>
+
+        <record id="quant_rollnumber_view_in_detailed_operation" model="ir.ui.view">
+            <field name="name">quant.rollnumber.view.in.detailed.operation</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_move_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='reference']" position="after">
+                    <field name="picking_id"/>
+                </xpath>
+            </field>
+        </record>
 <!--        <record id="view_stock_move_product_whout_total_amount" model="ir.ui.view">-->
 <!--            <field name="name">view.WHout.form.total</field>-->
 <!--            <field name="model">stock.picking</field>-->

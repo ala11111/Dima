@@ -33,12 +33,12 @@
 	</template>
 
 
-	<template id = "edit_report_statement" inherit_id = "account.report_statement">
+<!--	<template id = "edit_report_statement" inherit_id = "account.report_statement">-->
 
-		<xpath expr="//table[1]" position="attributes">
-			<attribute name="class">d-none</attribute>
-		</xpath>
-	</template>
+<!--		<xpath expr="//table[1]" position="attributes">-->
+<!--			<attribute name="class">d-none</attribute>-->
+<!--		</xpath>-->
+<!--	</template>-->
 
 
 </odoo>
