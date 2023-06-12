@@ -10,6 +10,7 @@
                             <br/>
                             <br/>
 
+
                             <div class="row" id="header_info">
                                 <div class="col-3">
                                     <strong>Name :</strong>
@@ -17,7 +18,7 @@
 
                                 </div>
                                 <div class="col-7">
-                                 <strong>Currency :</strong>
+                                    <strong>Currency :</strong>
                                     <p t-field="o.currency_id.name"/>
 
                                 </div>
@@ -29,6 +30,9 @@
                                     <tr>
                                         <th>
                                             <strong>Product</strong>
+                                        </th>
+                                        <th>
+                                            <strong>Product Image</strong>
                                         </th>
                                         <th class="text-right">
                                             <strong>Quantity</strong>
@@ -47,12 +51,18 @@
                                             <td>
                                                 <span t-field="l.product_tmpl_id.name"/>
                                             </td>
+                                            <td class="text-center">
+                                                <img t-if="l.product_tmpl_id.image_1920"
+                                                     t-att-src="'data:image/png;base64,%s' % to_text(l.product_tmpl_id.image_1920)"
+                                                     style="width: 50%"/>
+                                            </td>
                                             <td class="text-right">
                                                 <span t-field="l.min_quantity"/>
                                             </td>
                                             <td class="text-right">
                                                 <span
-                                                        t-field="l.fixed_price" t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                                        t-field="l.fixed_price"
+                                                        t-options='{"widget": "monetary", "display_currency": o.currency_id}'
                                                 />
                                             </td>
 
