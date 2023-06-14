@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        &lt;!&ndash; QWeb Reports &ndash;&gt;-->
+<!--        &lt;!&ndash; NAME & FILE_NAME should be the same &ndash;&gt;-->
+<!--                <report-->
+<!--                    id="UNIQUE_REPORT_ID"-->
+<!--                    model="MODEL_WHERE_THE_REPORT_WILL_BE_PRINTED"-->
+<!--                    report_type="qweb-pdf"-->
+<!--                    string="LABEL"-->
+<!--                    name="NAME"-->
+<!--                    file="FILE_NAME"-->
+<!--                />-->
+        <record id="action_report_product_pricelist_id" model="ir.actions.report">
+            <field name="name">Print pricelist</field>
+            <field name="model">product.pricelist</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">print_pricelist.report_product_pricelist</field>
+            <field name="report_file">print_pricelist.report_product_pricelist</field>
+            <field name="print_report_name">object.name</field>
+            <field name="binding_model_id" ref="product.model_product_pricelist"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+    </data>
+</odoo>

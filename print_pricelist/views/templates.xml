@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_product_pricelist">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <br/>
+                            <br/>
+
+
+                            <div class="row" id="header_info">
+                                <div class="col-3">
+                                    <strong>Name :</strong>
+                                    <p t-field="o.name"/>
+
+                                </div>
+                                <div class="col-7">
+                                    <strong>Currency :</strong>
+                                    <p t-field="o.currency_id.name"/>
+
+                                </div>
+                            </div>
+                            <br></br>
+                            <table class="table table-sm">
+
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <strong>Product</strong>
+                                        </th>
+                                        <th>
+                                            <strong>Product Image</strong>
+                                        </th>
+                                        <th class="text-right">
+                                            <strong>Quantity</strong>
+                                        </th>
+                                        <th class="text-right">
+                                            <strong>Price</strong>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.item_ids" t-as="l">
+
+                                        <tr>
+
+                                            <td>
+                                                <span t-field="l.product_tmpl_id.name"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <img t-if="l.product_tmpl_id.image_1920"
+                                                     t-att-src="'data:image/png;base64,%s' % to_text(l.product_tmpl_id.image_1920)"
+                                                     style="width: 50%"/>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="l.min_quantity"/>
+                                            </td>
+                                            <td class="text-right">
+                                                <span
+                                                        t-field="l.fixed_price"
+                                                        t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                                />
+                                            </td>
+
+
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>
