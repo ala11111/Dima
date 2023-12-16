@@ -19,9 +19,9 @@
             <!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="replace">-->
 
             <!--			</xpath>-->
-            <xpath expr="//div[contains(@class,'float-left company_address')]" position="attributes">
-                <attribute name="class">d-none</attribute>
-            </xpath>
+<!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="attributes">-->
+<!--                <attribute name="class">d-none</attribute>-->
+<!--            </xpath>-->
             <xpath expr="//div[contains(@class,'clearfix mb8')]" position="after">
                 <div class="float-left company_address">
                     <span t-if="company.company_details" t-field="company.company_details"/>
