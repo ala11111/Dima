@@ -53,7 +53,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <img t-if="l.product_tmpl_id.image_1920"
-                                                     t-att-src="'data:image/png;base64,%s' % to_text(l.product_tmpl_id.image_1920)"
+                                                     t-att-src="image_data_uri(l.product_tmpl_id.image_1920)"
                                                      style="width: 50%"/>
                                             </td>
                                             <td class="text-right">
