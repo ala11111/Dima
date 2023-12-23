@@ -18,6 +18,7 @@
     # for the full list
     'category': 'Uncategorized',
     'version': '16',
+    'license': 'OPL-1',
 
     # any module necessary for this one to work correctly
     'depends': ['base','stock','stock_account'],
