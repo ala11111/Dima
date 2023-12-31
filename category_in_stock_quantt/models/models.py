@@ -14,13 +14,13 @@ class StockQuant(models.Model):
 class StockMove(models.Model):
     _inherit = 'stock.move'
 
-    categ_id = fields.Many2one(comodel_name="product.category", string="Category", required=False,related='product_id.categ_id',store=True )
+    categ_id = fields.Many2one(comodel_name="product.category", string="Category 1", required=False,related='product_id.categ_id',store=True )
 
 
 class StockMoveLine(models.Model):
     _inherit = 'stock.move.line'
 
-    categ_id = fields.Many2one(comodel_name="product.category", string="Category", required=False,related='product_id.categ_id',store=True )
+    categ_id = fields.Many2one(comodel_name="product.category", string="Category 2", required=False,related='product_id.categ_id',store=True )
 
 
 #
