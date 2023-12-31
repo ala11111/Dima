@@ -22,7 +22,6 @@
                                             <th>Image</th>
                                             <th>Available Quantity</th>
                                             <th>Sales Price</th>
-                                            <th>Sales Description</th>
                                             <th>Value</th>
                                         </tr>
                                     </thead>
@@ -38,14 +37,12 @@
                                                          style="width: 100%"/>
                                                 </td>
                                                 <td>
-                                                    <span t-esc="doc.product_id.name"/>
+                                                    <span t-esc="doc.available_quantity"/>
                                                 </td>
                                                 <td>
                                                     <span t-esc="doc.product_id.list_price"/>
                                                 </td>
-                                                <td>
-                                                    <span t-esc="doc.product_id.description_sale"/>
-                                                </td>
+
                                                 <td>
                                                     <span t-esc="doc.value"/>
                                                 </td>
