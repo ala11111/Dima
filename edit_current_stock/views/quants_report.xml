@@ -27,28 +27,30 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <span t-esc="docs.product_id.name"/>
-                                            </td>
-                                            <td>
-                                                <img t-if="docs.product_id.image_128" t-att-src="image_data_uri(docs.product_id.image_128)"
-                                                     style="width: 100%"/>
-                                            </td>
-                                            <td>
-                                                <span t-esc="docs.product_id.name"/>
-                                            </td>
-                                            <td>
-                                                <span t-esc="docs.product_id.list_price"/>
-                                            </td>
-                                            <td>
-                                                <span t-esc="docs.product_id.description_sale"/>
-                                            </td>
-                                            <td>
-                                                <span t-esc="docs.value"/>
-                                            </td>
-
-                                        </tr>
+                                        <t t-foreach="docs" t-as="doc">
+                                            <tr>
+                                                <td>
+                                                    <span t-esc="doc.product_id.name"/>
+                                                </td>
+                                                <td>
+                                                    <img t-if="doc.product_id.image_128"
+                                                         t-att-src="image_data_uri(doc.product_id.image_128)"
+                                                         style="width: 100%"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="doc.product_id.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="doc.product_id.list_price"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="doc.product_id.description_sale"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="doc.value"/>
+                                                </td>
+                                            </tr>
+                                        </t>
                                     </tbody>
                                 </table>
                             </div>
