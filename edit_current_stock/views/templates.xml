@@ -8,7 +8,7 @@
 
             <xpath expr="//table[1]/tbody/t[1]/tr[2]/td[2]" position="after">
                 <td class="text-center">
-                    <img t-if="line.image_128" t-att-src="'data:image/png;base64,%s' % to_text(line.image_128)"
+                    <img t-if="line.image_128" t-att-src="image_data_uri(line.image_128)"
                          style="width: 100%"/>
                 </td>
             </xpath>
@@ -19,9 +19,9 @@
             <!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="replace">-->
 
             <!--			</xpath>-->
-<!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="attributes">-->
-<!--                <attribute name="class">d-none</attribute>-->
-<!--            </xpath>-->
+            <!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="attributes">-->
+            <!--                <attribute name="class">d-none</attribute>-->
+            <!--            </xpath>-->
             <xpath expr="//div[contains(@class,'clearfix mb8')]" position="after">
                 <div class="float-left company_address">
                     <span t-if="company.company_details" t-field="company.company_details"/>
@@ -64,7 +64,8 @@
                         </table>
                         <table width="20%">
                             <tr width="100%">
-                                <img src="/edit_current_stock/static/img/qr.jpeg" style="height: 100px;width: 100px;" alt="qr"/>
+                                <img src="/edit_current_stock/static/img/qr.jpeg" style="height: 100px;width: 100px;"
+                                     alt="qr"/>
                             </tr>
 
                         </table>
