@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+
+        <report
+                id="quants_report_custom_action_id"
+                model="stock.quant"
+                report_type="qweb-pdf"
+                string="Quants Report"
+                name="edit_current_stock.quants_report_template"
+                file="edit_current_stock.quants_report_template"
+        />
+        <template id="quants_report_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Image</th>
+                                            <th>Available Quantity</th>
+                                            <th>Sales Price</th>
+                                            <th>Sales Description</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span t-esc="docs.product_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="docs.image_128"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="docs.product_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="docs.product_id.list_price"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="docs.product_id.description_sale"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="docs.value"/>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

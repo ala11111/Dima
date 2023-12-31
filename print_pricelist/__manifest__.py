@@ -9,6 +9,7 @@
     'description': """
         Long description of module's purpose
     """,
+    'license': 'OPL-1',
 
     'author': "My Company",
     'website': "http://www.yourcompany.com",

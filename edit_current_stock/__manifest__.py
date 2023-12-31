@@ -9,7 +9,7 @@
     'description': """
         Long description of module's purpose
     """,
-
+    'license': 'OPL-1',
     'author': "My Company",
     'website': "http://www.yourcompany.com",
 
@@ -20,13 +20,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','stock','stock_account'],
+    'depends': ['base', 'stock', 'stock_account'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/quants_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
