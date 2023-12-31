@@ -32,7 +32,6 @@
                                                 <span t-esc="docs.product_id.name"/>
                                             </td>
                                             <td>
-                                                <!--                                                <span t-esc="docs.image_128"/>-->
                                                 <img t-if="docs.product_id.image_128" t-att-src="image_data_uri(docs.product_id.image_128)"
                                                      style="width: 100%"/>
                                             </td>
