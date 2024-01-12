@@ -16,12 +16,32 @@
 
         <template id="edit_external_layout_striped"
                   inherit_id="web.external_layout_striped">
-            <!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="replace">-->
+            <!--                        <xpath expr="//div[contains(@class,'float-left company_address')]" position="replace">-->
 
-            <!--			</xpath>-->
-            <!--            <xpath expr="//div[contains(@class,'float-left company_address')]" position="attributes">-->
-            <!--                <attribute name="class">d-none</attribute>-->
-            <!--            </xpath>-->
+            <!--            			</xpath>-->
+            <!--                        <xpath expr="//div[contains(@class,'float-left company_address')]" position="attributes">-->
+            <!--                            <attribute name="class">d-none</attribute>-->
+            <!--                        </xpath>-->
+
+            <xpath expr="//div[contains(@t-attf-class,'o_company_#{company.id}_layout header')]" position="replace">
+
+                <div t-attf-class="o_company_#{company.id}_layout header" t-att-style="report_header_style">
+                    <div class="o_background_header">
+                        <div class="float-end">
+                            <div class="mt0 text-end h3" t-field="company.report_header"/>
+                        </div>
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="float-start"
+                             alt="Logo"/>
+                        <!--                        <div class="float-start company_address">-->
+                        <!--                            <span t-if="company.company_details" t-field="company.company_details"/>-->
+                        <!--                        </div>-->
+                        <div class="clearfix mb8"/>
+                    </div>
+                </div>
+
+            </xpath>
+
+
             <xpath expr="//div[contains(@class,'clearfix mb8')]" position="after">
                 <div class="float-left company_address">
                     <span t-if="company.company_details" t-field="company.company_details"/>
@@ -35,7 +55,7 @@
                         <!--                            <div t-field="company.report_footer"/>-->
                         <!--                        </ul>-->
 
-                        <table width="80%">
+                        <table class="col-10">
                             <tr>
                                 <td>
                                     <b>Phone :</b>
@@ -62,7 +82,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <table width="20%">
+                        <table class="col-2" style="text-align:center">
                             <tr width="100%">
                                 <img src="/edit_current_stock/static/img/qr.jpeg" style="height: 100px;width: 100px;"
                                      alt="qr"/>

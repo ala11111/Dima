@@ -5,7 +5,7 @@
 			<th class="text-right">Image</th>
 		</xpath>
 		<xpath expr="//table[1]/tbody/t[3]/tr[1]/t[1]/td[2]" position="after"> 
-			<td class="text-right"><img t-if="line.image_128" t-att-src="image_data_uri(line.image_128)" style="width: 90%"/></td>
+			<td class="text-right"><img t-if="line.image_128" t-att-src="image_data_uri(line.image_128)" style="width: 90%;height:50px;"/></td>
 		</xpath>
 	</template>
 </odoo>

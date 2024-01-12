@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="base_document_layout_custom" model="ir.ui.view">
+            <field name="name">base_document_layout_custom</field>
+            <field name="model">base.document.layout</field>
+            <field name="inherit_id" ref="web.view_base_document_layout"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='company_details']" position="after">
+                    <field name="phone"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

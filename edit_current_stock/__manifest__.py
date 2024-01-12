@@ -28,6 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'views/quants_report.xml',
+        'views/document_layout.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
