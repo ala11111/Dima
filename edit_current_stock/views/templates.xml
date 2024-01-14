@@ -6,12 +6,36 @@
                 <th class="text-center">Product Image</th>
             </xpath>
 
+            <xpath expr="//table[1]/tbody/t[1]/tr[2]/td[2]" position="replace">
+                <td style="vertical-align: top;">
+                    <span t-field="line.product_id"/>
+                </td>
+            </xpath>
+
             <xpath expr="//table[1]/tbody/t[1]/tr[2]/td[2]" position="after">
                 <td class="text-center">
                     <img t-if="line.image_128" t-att-src="image_data_uri(line.image_128)"
                          style="width: 100%"/>
                 </td>
             </xpath>
+
+            <xpath expr="//table[1]/tbody/t[1]/tr[2]/td[6]" position="replace">
+                <td style="vertical-align: top;">
+                    <span t-field="line.available_quantity"/>
+                    <span t-field="line.product_uom_id" groups="uom.group_uom"/>
+                </td>
+
+            </xpath>
+            <xpath expr="//table[1]/tbody/t[1]/tr[2]/td[7]" position="replace">
+                <td style="vertical-align: top;">
+                    <span t-field="line.quantity"/>
+                    <span t-field="line.product_uom_id" groups="uom.group_uom"/>
+                </td>
+
+
+            </xpath>
+
+
         </template>
 
         <template id="edit_external_layout_striped"
